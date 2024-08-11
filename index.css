@@ -1,0 +1,22 @@
+.white-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(245, 246, 251, 0) 0%,
+    rgba(245, 246, 251, 0.25) 22.8%,
+    rgba(245, 246, 251, 0.35) 32.3%,
+    rgba(245, 246, 251, 0.46) 42.8%,
+    rgba(245, 246, 251, 0.66) 60.8%,
+    rgba(245, 246, 251, 0.8) 74.8%,
+    rgba(245, 246, 251, 0.91) 84.8%,
+    #f5f6fb 100%
+  );
+  mix-blend-mode: luminosity;
+}
+
+.box-shadow {
+  box-shadow: 0px 4px 20px 0px rgba(0, 140, 168, 0.2);
+}
+
+.btn-shadow {
+  box-shadow: 0px 4px 20px 0px rgba(255, 255, 255, 0.25);
+}
