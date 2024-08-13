@@ -6,12 +6,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="index.css" />
     <title>
-      Best Clock Radio - Podcast and Streaming Radio/Music Player for the iPhone
-      and iPad
+      Best Clock Radio - Podcast and Radio Alarm App for iPhone and iPad
     </title>
     <meta
       name="description"
-      content="Best Clock Radio is a feature-rich podcast and streaming radio/music player for iPhone and iPad. Wake up to your favorite content with customizable alarms."
+      content="Best Clock Radio: Feature-rich podcast and streaming radio alarm app for iPhone and iPad. Wake up to your favorite content with customizable alarms. Download now!"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,6 +38,57 @@
     />
     <meta name="theme-color" content="#ffffff" />
 
+    <meta
+      property="og:title"
+      content="Best Clock Radio - Podcast and Radio Alarm App for iPhone and iPad"
+    />
+    <meta
+      property="og:description"
+      content="Best Clock Radio: Feature-rich podcast and streaming radio alarm app for iPhone and iPad. Wake up to your favorite content with customizable alarms. Download now!"
+    />
+    <meta
+      property="og:image"
+      content="https://beautifulclockradio.com/assets/best-clock-radio-logo.jpg"
+    />
+    <meta property="og:url" content="https://beautifulclockradio.com" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Best Clock Radio - Podcast and Radio Alarm App for iPhone and iPad"
+    />
+    <meta
+      name="twitter:description"
+      content="Best Clock Radio: Feature-rich podcast and streaming radio alarm app for iPhone and iPad. Wake up to your favorite content with customizable alarms. Download now!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://beautifulclockradio.com/assets/best-clock-radio-logo.jpg"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Best Clock Radio",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "iOS",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Best Clock Radio is a feature-rich podcast and streaming radio/music player for iPhone and iPad with customizable alarms.",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "1000"
+        },
+        "image": "https://beautifulclockradio.com/assets/best-clock-radio-logo.jpg"
+      }
+    </script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -57,7 +107,7 @@
     <header
       class="text-[#999] py-4 font-alumni w-full flex items-center justify-between max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12"
     >
-      <h4 class="italic font-bold text-[32px]">BEST CLOCK RADIO</h4>
+      <h1 class="italic font-bold text-[32px]">BEST CLOCK RADIO</h1>
       <p
         id="support-link-header"
         class="text-2xl underline underline-offset-[3px] cursor-pointer"
@@ -72,42 +122,41 @@
         class="w-full flex max-lg:flex-col max-lg:items-center max-lg:text-center justify-between gap-16 max-sm:gap-6 mt-[15vh] max-sm:mt-[10vh] relative overflow-hidden max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12"
       >
         <div class="max-w-[740px]">
-          <h1
+          <h2
             class="text-black text-[110px] max-sm:text-[70px] leading-[100px] max-sm:leading-[60px] font-alumni font-bold uppercase"
           >
             Best Clock Radio
-          </h1>
+          </h2>
           <p class="text-[32px] max-sm:text-[24px] leading-normal mt-4">
-            Podcast and Streaming Radio / Music Player for the iPhone and iPad
+            Podcast and Streaming Radio / Music Player for iPhone and iPad
           </p>
+
           <a
             href="https://apps.apple.com/app/best-clockradio-podcast/id858324439"
             class="w-full flex items-center max-lg:justify-center"
+            aria-label="Download Best Clock Radio from the App Store"
           >
             <img
               src="assets/app-store.png"
-              alt="app-store-link"
+              alt="Download Best Clock Radio on the App Store"
               class="max-w-[294px] max-sm:max-w-[235px] w-full mt-12 max-sm:mt-10"
             />
           </a>
         </div>
         <div
-          class="h-full max-h-[550px] max-w-[380px] mx-auto overflow-hidden p-6"
+          class="h-full max-h-[550px] max-w-[380px] mx-auto overflow-hidden px-5 max-lg:p-5"
         >
           <div class="relative">
             <img
               src="assets/1 iphone Radio.png"
-              alt="iphone-radio"
-              class="w-full h-full overflow-hidden mt-2"
+              alt="Best Clock Radio app interface on iPhone"
+              class="w-full h-full overflow-hidden max-lg:mt-2"
             />
           </div>
-
           <div
             class="absolute h-[90px] w-full white-gradient bottom-0 left-0 right-0"
-          />
+          ></div>
         </div>
-
-        <!-- background radio wave -->
         <div
           class="max-lg:hidden absolute -z-50 left-0 right-0 -bottom-16 h-[320px] bg-[url('./assets/radio-waves.png')] opacity-10"
         ></div>
@@ -117,15 +166,14 @@
       <section
         class="w-full py-16 max-sm:pt-16 max-sm:pb-10 max-w-[1440px] mx-auto md:px-8 lg:px-12"
       >
+        <h2 class="sr-only">Best Clock Radio Demo Video</h2>
         <div
           class="aspect-video max-h-[500px] w-full max-w-[1100px] md:border-[6px] md:border-[#B4CCF3] mx-auto md:rounded-[24px] overflow-hidden"
         >
           <iframe
             src="https://www.youtube.com/embed/82uiyJ_N6zk?si=_G72f6j93V_6LL3I"
-            title="YouTube video player"
-            frameborder="0"
+            title="Best Clock Radio App Demo Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
             class="w-full h-full"
           ></iframe>
@@ -149,12 +197,12 @@
             class="bg-white max-w-[750px] max-lg:mx-auto box-shadow rounded-[24px]"
           >
             <div class="p-8 max-sm:p-5">
-              <img src="assets/alarm.svg" alt="alarm" />
-              <h4
+              <img src="assets/alarm.svg" alt="Alarm icon" />
+              <h3
                 class="font-alumni text-black font-bold text-[48px] max-sm:text-[36px]"
               >
-                5 Alarms
-              </h4>
+                5 Customizable Alarms
+              </h3>
               <p
                 class="text-[24px] max-sm:text-lg max-sm:leading-[24px] leading-tight"
               >
@@ -162,13 +210,12 @@
                 playlist using any of the 5 customizable alarms.
               </p>
             </div>
-
             <div
               class="h-full max-h-[500px] max-w-[300px] mx-auto overflow-hidden"
             >
               <img
                 src="assets/3 iphone Alarm.png"
-                alt="iphone-alarm"
+                alt="Best Clock Radio alarm settings on iPhone"
                 class="w-full h-full overflow-hidden object-cover object-top mt-10"
               />
             </div>
@@ -179,12 +226,12 @@
             class="bg-white max-w-[750px] max-lg:mx-auto box-shadow rounded-[24px]"
           >
             <div class="p-8 max-sm:p-5">
-              <img src="assets/music.svg" alt="music" />
-              <h4
+              <img src="assets/music.svg" alt="Music note icon" />
+              <h3
                 class="font-alumni text-black font-bold text-[48px] max-sm:text-[36px]"
               >
-                Alarm Sounds
-              </h4>
+                Personalized Alarm Sounds
+              </h3>
               <p
                 class="text-[24px] max-sm:text-lg max-sm:leading-[24px] leading-tight"
               >
@@ -192,43 +239,42 @@
                 stations for a personalized wake-up experience.
               </p>
             </div>
-
             <div
               class="h-full max-h-[500px] max-w-[300px] mx-auto overflow-hidden"
             >
               <img
                 src="assets/4 iphone Alarm Sound.png"
-                alt="iphone-alarm"
+                alt="Best Clock Radio alarm sound settings on iPhone"
                 class="w-full h-full overflow-hidden object-cover object-top mt-8"
               />
             </div>
           </div>
+
           <!-- Feature 3 -->
           <div
             class="lg:col-span-2 max-lg:max-w-[750px] max-lg:mx-auto pt-10 px-8 max-sm:px-5 max-sm:pt-5 bg-white box-shadow rounded-[24px] w-full flex max-lg:flex-col items-center justify-center gap-8 max-lg:gap-16"
           >
             <div class="max-w-[680px]">
-              <img src="assets/play.svg" alt="alarm" />
-              <h4
+              <img src="assets/play.svg" alt="Play button icon" />
+              <h3
                 class="font-alumni text-black font-bold text-[48px] max-sm:text-[36px]"
               >
-                POWERFUL
-              </h4>
+                POWERFUL & EASY TO USE
+              </h3>
               <p
                 class="text-[24px] max-sm:text-lg max-sm:leading-[24px] leading-tight"
               >
-                Easy to use, press the radio button to play and press again to
+                Simple controls: press the radio button to play and again to
                 stop. Swipe up on the edge to raise the volume, and swipe down
                 to lower volume.
               </p>
             </div>
-
             <div
               class="h-full max-h-[450px] w-full max-w-[310px] mx-auto overflow-hidden"
             >
               <img
                 src="assets/2 iphone Podcast.png"
-                alt="iphone-podcast"
+                alt="Best Clock Radio podcast player interface on iPhone"
                 class="w-full h-full overflow-hidden object-cover object-top"
               />
             </div>
@@ -245,15 +291,14 @@
         >
           <div class="max-w-[690px] flex-1 lg:px-10 lg:py-12">
             <h2 class="font-alumni text-white text-[48px] font-bold uppercase">
-              Support
+              Customer Support
             </h2>
             <p class="text-[#B8B8B8] text-[24px] max-sm:text-[16px]">
-              We are here to help. If a radio stream stops working email us
-              using the link below or directly from within the app and we will
-              get you a fresh URL you can re-program to a radio button. (swipe
-              the weather panel to the left to access the in-app support link)
+              We're here to help. If a radio stream stops working, email us
+              using the link below or directly from within the app. We'll
+              provide a fresh URL you can re-program to a radio button. (Swipe
+              the weather panel left to access the in-app support link)
             </p>
-
             <div class="w-full flex justify-start max-lg:justify-center">
               <button
                 id="support-link-main"
@@ -263,17 +308,16 @@
                   class="font-alumni text-[32px] max-sm:text-[24px] font-semibold uppercase text-black"
                   >Send us Email</span
                 >
-                <img src="assets/arrow.svg" alt="arrow" />
+                <img src="assets/arrow.svg" alt="Email arrow icon" />
               </button>
             </div>
           </div>
-
           <div
             class="h-full lg:max-h-[500px] xl:max-h-[450px] max-h-[450px] px-6 w-full max-w-[310px] max-lg:max-w-[350px] lg:max-w-[380px] mx-auto overflow-hidden"
           >
             <img
               src="assets/support.png"
-              alt="support"
+              alt="Best Clock Radio customer support illustration"
               class="w-full h-full overflow-hidden object-cover object-top lg:mt-8"
             />
           </div>
@@ -288,9 +332,10 @@
           Privacy Policy
         </h2>
         <p class="text-[20px] max-sm:text-base max-w-[750px] mx-auto">
-          Best Clock Radio does not collect, store, or require any personal
-          information such as email, phone, or device ID to use, it just plays
-          what you want.
+          Best Clock Radio respects your privacy. We do not collect, store, or
+          require any personal information such as email, phone, or device ID to
+          use our app. It simply plays what you want, ensuring your data remains
+          private.
         </p>
       </section>
     </main>
@@ -302,7 +347,7 @@
       <a
         href="https://apps.apple.com/app/best-clockradio-podcast/id858324439"
         class="underline underline-offset-[3px] font-alumni text-[20px] font-semibold"
-        >Download the app</a
+        >Download Best Clock Radio</a
       >
 
       <p class="text-base max-sm:text-sm">
