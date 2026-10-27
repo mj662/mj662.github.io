@@ -1,54 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>For Radio Stations | Enjoyable Apps</title>
-    <meta name="description" content="Bring your station to our listeners. Simple station submission form for Enjoyable Apps radio players." />
-    <link rel="canonical" href="https://www.beautifulclockradio.com/stations.html" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
-    <style>
-      :root { color-scheme:light; --background:#f5f6fb; --surface:#fff; --text:#171721; --muted:#565b6b; --accent:#1d4f91; --border:#d8deeb; }
-      * { box-sizing:border-box; }
-      [hidden] { display:none!important; }
-      body { margin:0; background:var(--background); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:17px; line-height:1.5; }
-      a { color:var(--accent); text-underline-offset:.16em; }
-      a:focus-visible,select:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
-      header,main,footer { width:min(100% - 32px,960px); margin-inline:auto; }
-      header { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 0; }
-      .brand { color:var(--muted); font-size:.85rem; font-weight:750; letter-spacing:.06em; text-decoration:none; text-transform:uppercase; }
-      .language-picker { display:flex; align-items:center; gap:8px; }
-      select { max-width:100%; padding:7px 26px 7px 9px; border:1px solid var(--border); border-radius:7px; background:var(--surface); color:var(--text); font:inherit; font-size:.9rem; }
-      h1 { margin:8px 0 10px; font-size:clamp(1.8rem,4vw,2.25rem); line-height:1.15; letter-spacing:-.025em; }
-      .intro p { margin:0 0 14px; max-width:900px; }
-      .form-card { overflow:hidden; border:1px solid var(--border); border-radius:12px; background:var(--surface); }
-      iframe { display:block; width:100%; height:1700px; border:0; background:var(--background); }
-      .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-      footer { padding:18px 0 28px; color:var(--muted); font-size:.85rem; }
-      footer nav { display:flex; flex-wrap:wrap; gap:12px 20px; }
-      footer p { margin:12px 0 0; }
-      @media(max-width:560px) { body { font-size:16px; } header,main,footer { width:min(100% - 20px,960px); } iframe { height:2100px; } }
-    </style>
-  </head>
-  <body>
-    <header>
-      <a class="brand" href="index.html">Enjoyable Apps</a>
-      <div class="language-picker" hidden id="language-picker"><label class="sr-only" for="station-language" data-i18n="language">Language</label><select id="station-language" aria-describedby="language-note"><option value="en">English</option></select></div>
-    </header>
-    <main id="main">
-      <section class="intro" aria-labelledby="page-title">
-        <h1 id="page-title" data-i18n="heading">Bring your station to our listeners.</h1>
-        <p data-i18n="lead">Best Clock Radio and Beautiful Clock Radio offer a full-featured clock radio for everyone. Fixed, non-scrolling preset buttons make saved stations easy to find, right where you expect them.</p>
-      </section>
-      <span class="sr-only" id="language-note" data-i18n="languageNote">Changing language reloads the form. Complete your submission before switching.</span>
-      <div class="form-card">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScunfU1Xr44zUmVA2vM7pnvMm0rawGsvcClRjQQ0kvmA5W1xQ/viewform?embedded=true" title="Enjoyable Apps station details and permission form" referrerpolicy="strict-origin-when-cross-origin">Loading the station form…</iframe>
-      </div>
-    </main>
-    <footer>
-      <nav aria-label="Footer"><a id="station-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLScunfU1Xr44zUmVA2vM7pnvMm0rawGsvcClRjQQ0kvmA5W1xQ/viewform" target="_blank" rel="noopener" data-i18n="openForm">Open form separately</a><a href="index.html" data-i18n="ourApps">Our apps</a><a href="privacy.html" data-i18n="privacy">Privacy policy (English)</a><a href="mailto:contact@beautifulclockradio.com" data-i18n="contact">Contact</a></nav>
-      <p>© 2026 Enjoyable Apps. <span data-i18n="rights">All rights reserved.</span></p>
-    </footer>
-    <script src="station-languages.js?v=20261027-welcome" defer></script>
-  </body>
-</html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Radio Stations | Enjoyable Apps</title>
+<meta name="description" content="Bring your station to our listeners. Simple station submission form for Enjoyable Apps radio players.">
+<link rel="canonical" href="https://www.beautifulclockradio.com/stations.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="stylesheet" href="station-form.css?v=20261027-custom1">
+<script src="station-languages.js?v=20261027-custom1" defer></script>
+<script src="station-form-config.js?v=20261027-custom1" defer></script>
+<script src="station-form.js?v=20261027-custom1" defer></script>
+</head>
+<body>
+<header><a class="brand" href="index.html">Enjoyable Apps</a><div id="language-picker" hidden><label class="sr-only" for="station-language" data-i18n="language">Language</label><select id="station-language"><option value="en">English</option></select></div></header>
+<main>
+<section class="intro" aria-labelledby="page-title"><h1 id="page-title" data-i18n="heading">Bring your station to our listeners.</h1><p data-i18n="lead">Best Clock Radio and Beautiful Clock Radio offer a full-featured clock radio for everyone. Fixed, non-scrolling preset buttons make saved stations easy to find, right where you expect them.</p></section>
+<form id="station-form" class="form-card" method="post" target="station-receipt" aria-describedby="form-status">
+<div class="field-grid"><div class="field"><label for="station_name" data-i18n="stationName">Station name</label><input id="station_name" name="station_name" type="text" autocomplete="organization" data-limit="120" required></div>
+<div class="field"><label for="website" data-i18n="website">Official website</label><input id="website" name="website" type="text" autocomplete="url" data-limit="2048" required inputmode="url" placeholder="https://yourstation.com" data-placeholder="urlHint"></div>
+<div class="field"><label for="representative" data-i18n="representative">Your name</label><input id="representative" name="representative" type="text" autocomplete="name" data-limit="120" required></div>
+<div class="field"><label for="email" data-i18n="email">Station contact email</label><input id="email" name="email" type="email" autocomplete="email" data-limit="254" required></div>
+</div>
+<details id="optional-details"><summary data-i18n="optional">Optional station details</summary><div class="field-grid optional-grid">
+<div class="field"><label for="display_name" data-i18n="displayName">Display name</label><input id="display_name" name="display_name" data-limit="30" aria-describedby="display-hint display-counter"><div class="field-note"><span id="display-hint" data-i18n="displayHint">For the station listing and preset buttons.</span><span id="display-counter" class="counter" data-counter="display_name"></span></div></div>
+<div class="field"><label for="description" data-i18n="description">Short description</label><input id="description" name="description" data-limit="60" aria-describedby="description-hint description-counter"><div class="field-note"><span id="description-hint" data-i18n="descriptionHint">A brief description of your station.</span><span id="description-counter" class="counter" data-counter="description"></span></div></div>
+<div class="field"><label for="stream_url" data-i18n="stream">Stream URL</label><input id="stream_url" name="stream_url" type="url" inputmode="url" data-limit="2048" placeholder="https://"></div>
+<div class="field"><label for="artwork_url" data-i18n="artwork">Artwork URL</label><input id="artwork_url" name="artwork_url" type="url" inputmode="url" data-limit="2048" placeholder="https://"></div>
+<div class="field full-width"><label for="comments" data-i18n="comments">Restrictions or comments</label><textarea id="comments" name="comments" rows="2" data-limit="2000"></textarea></div>
+</div></details>
+<section class="permission" aria-labelledby="permission-heading"><h2 id="permission-heading" data-i18n="permissionHeading">Station permission</h2><p id="permission-text" data-i18n="permission">I am authorized to grant these permissions on behalf of this station. I give Enjoyable Apps permission to list this station, provide playback of its official live stream, and display station artwork that we supply or approve in its current and future radio-player apps, including Best Clock Radio and Beautiful Clock Radio. This includes live listening and, where available, radio alarms and sleep timer use, subject to the station’s geographic restrictions and any conditions entered above.</p><label class="agreement"><input type="checkbox" id="permission" name="permission" value="agree" required aria-describedby="permission-text"><span data-i18n="agree">I agree and grant the permission above.</span></label></section>
+<div hidden aria-hidden="true"><label for="fax">Leave this blank</label><input id="fax" name="fax" autocomplete="off" tabindex="-1"></div>
+<input type="hidden" name="language" value="en"><input type="hidden" name="permission_version" value="2026-10-27"><input type="hidden" name="submission_id"><input type="hidden" name="response_token"><input type="hidden" name="started_at"><input type="hidden" name="origin">
+<div class="submit-row"><button id="submit-button" type="submit" disabled data-i18n="submit">Add my station</button><span class="private-note" data-i18n="privateNote">Your contact details stay private.</span></div>
+<p id="form-status" role="status" aria-live="polite" tabindex="-1" hidden></p>
+<noscript><p>Please enable JavaScript to submit this form, or email <a href="mailto:contact@beautifulclockradio.com">contact@beautifulclockradio.com</a>.</p></noscript>
+</form>
+<section id="success" class="form-card" hidden tabindex="-1" aria-live="polite"><p data-i18n="success">Thank you. Your station details and permission have been received. We’ll review them before adding your station.</p><p><span data-i18n="reference">Reference</span>: <strong id="submission-reference"></strong></p><button id="another-station" type="button" data-i18n="reset">Add another station</button></section>
+<iframe id="receipt-frame" name="station-receipt" title="Submission receipt" hidden></iframe>
+</main>
+<footer><nav aria-label="Footer"><a href="index.html" data-i18n="ourApps">Our apps</a><a href="privacy.html" data-i18n="privacy">Privacy policy (English)</a><a href="mailto:contact@beautifulclockradio.com" data-i18n="contact">Contact</a></nav><p>© 2026 Enjoyable Apps. <span data-i18n="rights">All rights reserved.</span></p></footer>
+</body></html>

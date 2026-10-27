@@ -1,110 +1,163 @@
-/* Public translations and versioned form links. No station submissions are stored here. */
-(() => {
-  "use strict";
-  const locales = {
+/* Public website copy. Contact details and submissions are never stored here. */
+window.STATION_LOCALES = {
   "en": {
     "name": "English",
-    "formId": "1FAIpQLScunfU1Xr44zUmVA2vM7pnvMm0rawGsvcClRjQQ0kvmA5W1xQ",
     "title": "For Radio Stations | Enjoyable Apps",
     "ourApps": "Our apps",
     "contact": "Contact",
     "language": "Language",
     "heading": "Bring your station to our listeners.",
     "lead": "Best Clock Radio and Beautiful Clock Radio offer a full-featured clock radio for everyone. Fixed, non-scrolling preset buttons make saved stations easy to find, right where you expect them.",
-    "languageNote": "Changing language reloads the form. Complete your submission before switching.",
-    "openForm": "Open form separately",
     "privacy": "Privacy policy (English)",
     "rights": "All rights reserved.",
-    "iframeTitle": "Enjoyable Apps station details and permission form"
+    "stationName": "Station name",
+    "website": "Official website",
+    "representative": "Your name",
+    "email": "Station contact email",
+    "optional": "Optional station details",
+    "displayName": "Display name",
+    "description": "Short description",
+    "stream": "Stream URL",
+    "artwork": "Artwork URL",
+    "comments": "Restrictions or comments",
+    "permissionHeading": "Station permission",
+    "submit": "Add my station",
+    "sending": "Sending…",
+    "success": "Thank you. Your station details and permission have been received. We’ll review them before adding your station.",
+    "reference": "Reference",
+    "error": "We couldn’t confirm your submission. Your answers are still here. Please try again or contact us.",
+    "rateError": "Please try again later, or contact us.",
+    "invalid": "Please check this field.",
+    "limit": "Use {max} characters or fewer.",
+    "counter": "{count}/{max} characters",
+    "displayHint": "For the station listing and preset buttons.",
+    "descriptionHint": "A brief description of your station.",
+    "privateNote": "Your contact details stay private.",
+    "reset": "Add another station",
+    "unavailable": "The form is temporarily unavailable. Please contact contact@beautifulclockradio.com.",
+    "noScript": "Please enable JavaScript to submit this form, or email contact@beautifulclockradio.com.",
+    "urlHint": "https://yourstation.com",
+    "agree": "I agree and grant the permission above.",
+    "permission": "I am authorized to grant these permissions on behalf of this station. I give Enjoyable Apps permission to list this station, provide playback of its official live stream, and display station artwork that we supply or approve in its current and future radio-player apps, including Best Clock Radio and Beautiful Clock Radio. This includes live listening and, where available, radio alarms and sleep timer use, subject to the station’s geographic restrictions and any conditions entered above."
   },
   "es": {
     "name": "Español",
-    "formId": "1FAIpQLSf88O0qbN4IKCc61auzqQor58Ay98JgVG6LjMNwzvxXzYtdlQ",
     "title": "Para emisoras de radio | Enjoyable Apps",
     "ourApps": "Nuestras apps",
     "contact": "Contacto",
     "language": "Idioma",
     "heading": "Acerca tu emisora a nuestros oyentes.",
     "lead": "Best Clock Radio y Beautiful Clock Radio ofrecen un radio despertador completo para todos. Los botones fijos de emisoras guardadas, sin desplazamiento, facilitan encontrarlas justo donde esperas.",
-    "languageNote": "Al cambiar de idioma se vuelve a cargar el formulario. Envía tus respuestas antes de cambiar.",
-    "openForm": "Abrir formulario por separado",
     "privacy": "Política de privacidad (en inglés)",
     "rights": "Todos los derechos reservados.",
-    "iframeTitle": "Formulario de datos y permiso de la emisora de Enjoyable Apps"
+    "stationName": "Nombre de la emisora",
+    "website": "Sitio web oficial",
+    "representative": "Tu nombre",
+    "email": "Email de contacto de la emisora",
+    "optional": "Datos opcionales de la emisora",
+    "displayName": "Nombre para mostrar",
+    "description": "Descripción breve",
+    "stream": "URL de la transmisión",
+    "artwork": "URL de la imagen",
+    "comments": "Restricciones o comentarios",
+    "permissionHeading": "Permiso de la emisora",
+    "submit": "Añadir mi emisora",
+    "sending": "Enviando…",
+    "success": "Gracias. Hemos recibido los datos y el permiso de tu emisora. Los revisaremos antes de añadirla.",
+    "reference": "Referencia",
+    "error": "No hemos podido confirmar el envío. Tus respuestas siguen aquí. Inténtalo de nuevo o contacta con nosotros.",
+    "rateError": "Inténtalo más tarde o contacta con nosotros.",
+    "invalid": "Revisa este campo.",
+    "limit": "Usa {max} caracteres o menos.",
+    "counter": "{count}/{max} caracteres",
+    "displayHint": "Para la lista de emisoras y los botones de emisoras guardadas.",
+    "descriptionHint": "Una breve descripción de tu emisora.",
+    "privateNote": "Tus datos de contacto se mantienen privados.",
+    "reset": "Añadir otra emisora",
+    "unavailable": "El formulario no está disponible temporalmente. Contacta con contact@beautifulclockradio.com.",
+    "noScript": "Activa JavaScript para enviar este formulario o escribe a contact@beautifulclockradio.com.",
+    "urlHint": "https://tuemisora.com",
+    "agree": "Acepto y concedo el permiso indicado arriba.",
+    "permission": "Tengo autorización para conceder estos permisos en nombre de esta emisora. Doy permiso a Enjoyable Apps para incluir esta emisora en sus listados, reproducir su emisión oficial en directo y mostrar el material gráfico de la emisora que proporcionemos o aprobemos en sus apps actuales y futuras de reproducción de radio, incluidas Best Clock Radio y Beautiful Clock Radio. Esto incluye la escucha en directo y, cuando estén disponibles, el uso de alarmas de radio y del temporizador de apagado, sujeto a las restricciones geográficas de la emisora y a las condiciones indicadas anteriormente."
   },
   "fr": {
     "name": "Français",
-    "formId": "1FAIpQLSfD-ObJh34LQbRn-n62s0dWyECOSTLyeLbVZhtTuQnVg0mr8Q",
     "title": "Pour les stations de radio | Enjoyable Apps",
     "ourApps": "Nos apps",
     "contact": "Contact",
     "language": "Langue",
     "heading": "Faites découvrir votre station à nos auditeurs.",
     "lead": "Best Clock Radio et Beautiful Clock Radio offrent un radio-réveil complet pour tous. Les boutons de présélection fixes, sans défilement, permettent de retrouver facilement les stations mémorisées, là où vous les attendez.",
-    "languageNote": "Changer de langue recharge le formulaire. Envoyez vos réponses avant de changer.",
-    "openForm": "Ouvrir le formulaire séparément",
     "privacy": "Politique de confidentialité (en anglais)",
     "rights": "Tous droits réservés.",
-    "iframeTitle": "Formulaire d’informations et d’autorisation de station Enjoyable Apps"
+    "stationName": "Nom de la station",
+    "website": "Site officiel",
+    "representative": "Votre nom",
+    "email": "Email de contact de la station",
+    "optional": "Informations facultatives",
+    "displayName": "Nom à afficher",
+    "description": "Description courte",
+    "stream": "URL du flux",
+    "artwork": "URL de l’illustration",
+    "comments": "Restrictions ou commentaires",
+    "permissionHeading": "Autorisation de la station",
+    "submit": "Ajouter ma station",
+    "sending": "Envoi…",
+    "success": "Merci. Nous avons reçu les informations et l’autorisation de votre station. Nous les examinerons avant de l’ajouter.",
+    "reference": "Référence",
+    "error": "Nous n’avons pas pu confirmer votre envoi. Vos réponses sont conservées ici. Réessayez ou contactez-nous.",
+    "rateError": "Réessayez plus tard ou contactez-nous.",
+    "invalid": "Veuillez vérifier ce champ.",
+    "limit": "Utilisez {max} caractères au maximum.",
+    "counter": "{count}/{max} caractères",
+    "displayHint": "Pour la liste des stations et les boutons de présélection.",
+    "descriptionHint": "Une brève description de votre station.",
+    "privateNote": "Vos coordonnées restent privées.",
+    "reset": "Ajouter une autre station",
+    "unavailable": "Le formulaire est temporairement indisponible. Contactez contact@beautifulclockradio.com.",
+    "noScript": "Activez JavaScript pour envoyer ce formulaire ou écrivez à contact@beautifulclockradio.com.",
+    "urlHint": "https://votrestation.fr",
+    "agree": "J’accepte et accorde l’autorisation ci-dessus.",
+    "permission": "Je suis habilité à accorder ces autorisations au nom de cette station. J’autorise Enjoyable Apps à référencer cette station, à permettre l’écoute de son flux officiel en direct et à afficher les visuels de la station que nous fournissons ou approuvons dans ses apps actuelles et futures de lecture radio, notamment Best Clock Radio et Beautiful Clock Radio. Cela comprend l’écoute en direct et, lorsqu’ils sont disponibles, l’utilisation des réveils radio et de la minuterie de mise en veille, sous réserve des restrictions géographiques de la station et des conditions indiquées ci-dessus."
   },
   "de": {
     "name": "Deutsch",
-    "formId": "1FAIpQLScVesPYDWw_vC2EyewhuFxisEV4iS0ZgF3aqWLqz4CtcF4saA",
     "title": "Für Radiosender | Enjoyable Apps",
     "ourApps": "Unsere Apps",
     "contact": "Kontakt",
     "language": "Sprache",
     "heading": "Bringen Sie Ihren Sender zu unseren Hörern.",
     "lead": "Best Clock Radio und Beautiful Clock Radio bieten einen voll ausgestatteten Radiowecker für alle. Feste Senderspeichertasten ohne Scrollen machen gespeicherte Sender leicht auffindbar – genau dort, wo Sie sie erwarten.",
-    "languageNote": "Ein Sprachwechsel lädt das Formular neu. Senden Sie Ihre Angaben vor dem Wechsel ab.",
-    "openForm": "Formular separat öffnen",
     "privacy": "Datenschutzerklärung (auf Englisch)",
     "rights": "Alle Rechte vorbehalten.",
-    "iframeTitle": "Formular für Senderangaben und Erlaubnis von Enjoyable Apps"
+    "stationName": "Sendername",
+    "website": "Offizielle Website",
+    "representative": "Ihr Name",
+    "email": "Kontakt-E-Mail des Senders",
+    "optional": "Optionale Senderangaben",
+    "displayName": "Anzeigename",
+    "description": "Kurzbeschreibung",
+    "stream": "Stream-URL",
+    "artwork": "URL der Sendergrafik",
+    "comments": "Einschränkungen oder Kommentare",
+    "permissionHeading": "Erlaubnis des Senders",
+    "submit": "Meinen Sender hinzufügen",
+    "sending": "Wird gesendet…",
+    "success": "Vielen Dank. Die Angaben und die Erlaubnis Ihres Senders sind eingegangen. Wir prüfen sie, bevor wir den Sender hinzufügen.",
+    "reference": "Referenz",
+    "error": "Wir konnten Ihre Einsendung nicht bestätigen. Ihre Angaben sind noch vorhanden. Versuchen Sie es erneut oder kontaktieren Sie uns.",
+    "rateError": "Versuchen Sie es später erneut oder kontaktieren Sie uns.",
+    "invalid": "Bitte überprüfen Sie dieses Feld.",
+    "limit": "Verwenden Sie höchstens {max} Zeichen.",
+    "counter": "{count}/{max} Zeichen",
+    "displayHint": "Für die Senderliste und die Senderspeichertasten.",
+    "descriptionHint": "Eine kurze Beschreibung Ihres Senders.",
+    "privateNote": "Ihre Kontaktdaten bleiben privat.",
+    "reset": "Weiteren Sender hinzufügen",
+    "unavailable": "Das Formular ist vorübergehend nicht verfügbar. Kontaktieren Sie contact@beautifulclockradio.com.",
+    "noScript": "Aktivieren Sie JavaScript zum Absenden oder schreiben Sie an contact@beautifulclockradio.com.",
+    "urlHint": "https://ihrsender.de",
+    "agree": "Ich stimme zu und erteile die oben genannte Erlaubnis.",
+    "permission": "Ich bin befugt, diese Erlaubnisse im Namen dieses Senders zu erteilen. Ich erlaube Enjoyable Apps, diesen Sender aufzulisten, seinen offiziellen Livestream wiederzugeben und von uns bereitgestellte oder genehmigte Sendergrafiken in seinen aktuellen und zukünftigen Radioplayer-Apps anzuzeigen, darunter Best Clock Radio und Beautiful Clock Radio. Dies umfasst das Livehören und, soweit verfügbar, die Nutzung von Radioweckern und Einschlaftimer, vorbehaltlich der geografischen Einschränkungen des Senders und der oben angegebenen Bedingungen."
   }
 };
-
-  const available = Object.keys(locales).filter(code => locales[code].formId);
-  const picker = document.getElementById("station-language");
-  const savedKey = "enjoyableapps-station-language";
-  const normalize = value => String(value || "").toLowerCase().split(/[-_]/)[0];
-  const supported = value => available.includes(normalize(value)) ? normalize(value) : null;
-  let saved = null;
-  try { saved = localStorage.getItem(savedKey); } catch (_) {}
-  const requested = new URLSearchParams(location.search).get("lang");
-  const detected = (navigator.languages || [navigator.language]).map(supported).find(Boolean);
-  const initial = supported(requested) || supported(saved) || detected || "en";
-  picker.replaceChildren(...available.map(code => {
-    const option = document.createElement("option");
-    option.value = code;
-    option.textContent = locales[code].name;
-    return option;
-  }));
-  function applyLanguage(code) {
-    const text = locales[code];
-    document.documentElement.lang = code;
-    document.title = text.title;
-    document.querySelectorAll("[data-i18n]").forEach(element => {
-      const value = text[element.dataset.i18n];
-      if (typeof value === "string") element.textContent = value;
-    });
-    const url = "https://docs.google.com/forms/d/e/" + text.formId + "/viewform";
-    document.getElementById("station-form-link").href = url + "?hl=" + code;
-    const frame = document.querySelector("iframe");
-    const embed = url + "?embedded=true&hl=" + code;
-    if (frame.getAttribute("src") !== embed) frame.src = embed;
-    frame.title = text.iframeTitle;
-    picker.value = code;
-  }
-  document.getElementById("language-picker").hidden = available.length < 2;
-  document.getElementById("language-note").hidden = available.length < 2;
-  picker.addEventListener("change", () => {
-    const code = supported(picker.value) || "en";
-    applyLanguage(code);
-    try { localStorage.setItem(savedKey, code); } catch (_) {}
-    const url = new URL(location.href);
-    url.searchParams.set("lang", code);
-    history.replaceState(null, "", url);
-  });
-  applyLanguage(initial);
-})();
