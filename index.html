@@ -106,15 +106,13 @@
   <body class="font-fira bg-[#F5F6FB] text-[#1A1A1A]">
     <!-- Header -->
     <header
-      class="text-[#999] py-4 font-alumni w-full flex items-center justify-between max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12"
+      class="text-[#999] py-4 font-alumni w-full flex max-sm:flex-col max-sm:items-start gap-4 items-center justify-between max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12"
     >
       <h1 class="italic font-bold text-[32px]">BEST CLOCK RADIO</h1>
-      <p
-        id="support-link-header"
-        class="text-2xl underline underline-offset-[3px] cursor-pointer"
-      >
-        Support
-      </p>
+      <nav aria-label="Main navigation" class="flex flex-wrap justify-end max-sm:justify-start items-center gap-x-6 gap-y-2 text-2xl">
+        <a href="stations.html" class="underline underline-offset-[3px]">For Radio Stations</a>
+        <button id="support-link-header" type="button" class="underline underline-offset-[3px] cursor-pointer">Support</button>
+      </nav>
     </header>
 
     <main class="w-full">
@@ -359,6 +357,8 @@
       >
         Download Best Clock Radio - Your News and Sports Radio Alarm
       </a>
+
+      <a href="stations.html" class="underline underline-offset-[3px] font-alumni text-[20px] font-semibold">For Radio Stations</a>
 
       <p class="text-base max-sm:text-sm">
         © 2026 Best Clock Radio. All Rights Reserved.
