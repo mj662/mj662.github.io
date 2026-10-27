@@ -38,6 +38,10 @@ The Best Clock Radio app landing page is a single-page website that showcases th
 
 This static website can be deployed to any web hosting service that supports HTML/CSS/JavaScript files.
 
+## Radio station permission form
+
+`stations.html` hosts the public Google Form for station permission. The linked response Sheet is private and is not part of this repository. See `docs/station-intake.md` for settings, verification and evidence retention. The exact initial permission wording is preserved in `docs/station-permission-v2026-10-27.txt`.
+
 ## Support
 
 For support inquiries, please email enjoyableapps@gmail.com or use the support link provided in the app.
