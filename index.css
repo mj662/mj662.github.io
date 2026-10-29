@@ -43,3 +43,6 @@
 .language-switcher{flex-basis:100%;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 20px;font:15px/1.4 -apple-system,BlinkMacSystemFont,sans-serif}.language-switcher a{color:#1d4f91;min-height:44px;padding:8px 2px;text-decoration:underline;text-underline-offset:4px}.language-switcher a[aria-current=page]{color:#171721;font-weight:700;text-decoration:none}html[lang=fr] .listening-section h2,html[lang=de] .listening-section h2{overflow-wrap:break-word}@media(max-width:650px){.language-switcher{justify-content:flex-start}}
 /* Keep language navigation on its own row at every viewport width. */
 header{flex-wrap:wrap}
+
+/* Keep the opening content close to the navigation, including language links. */
+.hero-devices-section{margin-top:clamp(24px,4vw,56px)}
