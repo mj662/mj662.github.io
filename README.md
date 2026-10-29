@@ -71,3 +71,13 @@ It uses the supplied localized screenshots in `assets/fr/` and `assets/de/`
 and Apple's official localized App Store badges. The slideshow reads its
 translated play/pause labels from the generated pages. Commit the generated
 `fr/index.html` and `de/index.html` along with their sources.
+
+### Automatic language selection
+
+`language-preference.js` detects language only on `/` and `/index.html`, using
+supported browser preferences (`en`, `fr`, `de`) with English fallback. A language
+switcher click saves an explicit preference in localStorage, which takes priority
+on later visits to the default entry page. Direct `/fr/` and `/de/` URLs remain in
+the requested language. If storage is blocked, switching still works and detection
+falls back to browser preferences. Query strings and anchors survive redirects.
+Verify with `node --test tests/language-preference.test.cjs`.

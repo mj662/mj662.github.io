@@ -46,3 +46,6 @@ header{flex-wrap:wrap}
 
 /* Keep the opening content close to the navigation, including language links. */
 .hero-devices-section{margin-top:clamp(24px,4vw,56px)}
+
+/* Explicit three-line names share a single, stable title area. */
+.hero-title-name{white-space:nowrap}
