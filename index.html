@@ -153,7 +153,7 @@
     <main class="w-full" id="main">
       <!-- Hero section -->
       <section
-        class="w-full flex max-lg:flex-col max-lg:items-center max-lg:text-center justify-between gap-16 max-sm:gap-6 mt-[15vh] max-sm:mt-[10vh] relative overflow-hidden max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12"
+        class="hero-devices-section w-full flex max-lg:flex-col max-lg:items-center max-lg:text-center justify-between gap-16 max-sm:gap-6 mt-[15vh] max-sm:mt-[10vh] relative overflow-hidden max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12"
       >
         <div class="max-w-[740px]">
           <h1 id="best-clock-radio"
@@ -172,19 +172,12 @@
  <div class="app-download"><img class="download-icon" src="assets/beautiful-app-icon.jpg" width="88" height="88" alt="Beautiful Clock Radio app icon"><strong>Beautiful Clock Radio</strong><a href="https://apps.apple.com/app/id442148386" aria-label="Download Beautiful Clock Radio on the App Store"><img class="download-badge" src="assets/app-store.png" width="170" alt="Download on the App Store"></a></div>
  </div>
         </div>
-        <div
-          class="h-full max-h-[550px] max-w-[380px] mx-auto overflow-hidden px-5 max-lg:p-5"
-        >
-          <div class="relative">
-            <img
-              src="assets/1 iphone Radio.png"
-              alt="Best Clock Radio app interface on iPhone"
-              class="w-full h-full overflow-hidden max-lg:mt-2"
-            />
-          </div>
-          <div
-            class="absolute h-[90px] w-full white-gradient bottom-0 left-0 right-0"
-          ></div>
+        <div class="hero-devices-image">
+          <img src="assets/best-clock-radio-ipad-iphone.png"
+            srcset="assets/best-clock-radio-ipad-iphone-small.png 700w, assets/best-clock-radio-ipad-iphone.png 1400w"
+            sizes="(min-width: 1024px) 55vw, 92vw"
+            width="1400" height="1008" fetchpriority="high"
+            alt="Best Clock Radio on iPad and iPhone, showing the clock, weather, and programmable station buttons">
         </div>
         <div
           class="max-lg:hidden absolute -z-50 left-0 right-0 -bottom-16 h-[320px] bg-[url('./assets/radio-waves.png')] opacity-10"
