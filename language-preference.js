@@ -1,5 +1,5 @@
 (() => {
-  const paths = { en: '/', fr: '/fr/', de: '/de/' };
+  const paths = { en: '/', fr: '/fr/', de: '/de/', es: '/es/' };
   const key = 'clock-radio-language';
   const supported = (value) => Object.prototype.hasOwnProperty.call(paths, value);
   document.addEventListener('click', (event) => {

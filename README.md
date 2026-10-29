@@ -52,14 +52,14 @@ For support inquiries, please email enjoyableapps@gmail.com or use the support l
 
 ## Localized homepages
 
-The English homepage lives at `/`, with French at `/fr/` and German at `/de/`.
-All three include a visible language switcher, self-canonical URLs, reciprocal
+The English homepage lives at `/`, with French at `/fr/`, German at `/de/`, and Spanish at `/es/`.
+All four include a visible language switcher, self-canonical URLs, reciprocal
 `hreflang` links and sitemap entries. The About page, full privacy policy and
 video currently remain in English; localized links label this explicitly.
 Beautiful Clock Radio screenshots currently use the English artwork.
 
 After changing English homepage content, update matching entries in
-`translations/home-fr.json` and `translations/home-de.json`, then run:
+`translations/home-fr.json`, `translations/home-de.json`, and `translations/home-es.json`, then run:
 
 ```sh
 python3 tools/build-localized-pages.py
@@ -67,17 +67,17 @@ python3 tools/check-localized-pages.py
 ```
 
 The builder rejects missing text and accessibility-attribute translations.
-It uses the supplied localized screenshots in `assets/fr/` and `assets/de/`
+It uses the supplied localized screenshots in `assets/fr/`, `assets/de/`, and `assets/es/`
 and Apple's official localized App Store badges. The slideshow reads its
 translated play/pause labels from the generated pages. Commit the generated
-`fr/index.html` and `de/index.html` along with their sources.
+`fr/index.html`, `de/index.html`, and `es/index.html` along with their sources.
 
 ### Automatic language selection
 
 `language-preference.js` detects language only on `/` and `/index.html`, using
-supported browser preferences (`en`, `fr`, `de`) with English fallback. A language
+supported browser preferences (`en`, `fr`, `de`, `es`) with English fallback. A language
 switcher click saves an explicit preference in localStorage, which takes priority
-on later visits to the default entry page. Direct `/fr/` and `/de/` URLs remain in
+on later visits to the default entry page. Direct `/fr/`, `/de/`, and `/es/` URLs remain in
 the requested language. If storage is blocked, switching still works and detection
 falls back to browser preferences. Query strings and anchors survive redirects.
 Verify with `node --test tests/language-preference.test.cjs`.

@@ -25,11 +25,11 @@ class Page(HTMLParser):
  def handle_data(self,d):
   if self.json:json.loads(d);self.json_count+=1
   elif not self.raw:self.text+=d
-for lang,relative in [('en','index.html'),('fr','fr/index.html'),('de','de/index.html')]:
+for lang,relative in [('en','index.html'),('fr','fr/index.html'),('de','de/index.html'),('es','es/index.html')]:
  p=ROOT/relative;s=p.read_text();c=Page();c.feed(s)
  url=ORIGIN+('/' if lang=='en' else '/'+lang+'/')
  assert c.lang==lang and c.h1==1 and c.canonical==[url] and c.json_count==1
- assert c.alternates=={'en':ORIGIN+'/','fr':ORIGIN+'/fr/','de':ORIGIN+'/de/','x-default':ORIGIN+'/'}
+ assert c.alternates=={'en':ORIGIN+'/','fr':ORIGIN+'/fr/','de':ORIGIN+'/de/','es':ORIGIN+'/es/','x-default':ORIGIN+'/'}
  for u in c.links:
   parts=urlparse(u)
   if parts.scheme or not parts.path:continue

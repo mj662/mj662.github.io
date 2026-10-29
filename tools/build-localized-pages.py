@@ -1,4 +1,4 @@
-"""Build crawlable French/German homepages from the English page and translation files.
+"""Build crawlable French/German/Spanish homepages from the English page and translation files.
 Run from any directory: python3 tools/build-localized-pages.py
 """
 from html import escape
@@ -7,8 +7,8 @@ from pathlib import Path
 import json,re
 ROOT=Path(__file__).resolve().parents[1]
 ORIGIN='https://www.beautifulclockradio.com'
-URLS={'en':ORIGIN+'/', 'fr':ORIGIN+'/fr/', 'de':ORIGIN+'/de/'}
-LABELS={'en':'English','fr':'Français','de':'Deutsch'}
+URLS={'en':ORIGIN+'/', 'fr':ORIGIN+'/fr/', 'de':ORIGIN+'/de/', 'es':ORIGIN+'/es/'}
+LABELS={'en':'English','fr':'Français','de':'Deutsch','es':'Español'}
 ATTRS={
  'fr':{
  'Main navigation':'Navigation principale','Download our apps':'Télécharger nos apps',
@@ -48,13 +48,15 @@ ATTRS={
  'Radio, podcast, and music symbols beside a winding coastal road at sunset':'Symbole für Radio, Podcasts und Musik neben einer Küstenstraße bei Sonnenuntergang',
  'Best Clock Radio customer support illustration':'Illustration zum Best Clock Radio-Support',
  }}
+ATTRS['es']=json.loads((ROOT/'translations/attributes-es.json').read_text())
 DESCRIPTIONS={
+ 'es':'Radio, podcasts y Apple Music con favoritos programables, alarmas y temporizador de apagado. Best Clock Radio y Beautiful Clock Radio para iPhone y iPad.',
  'fr':'Radio, podcasts et Apple Music avec favoris programmables, alarmes et minuterie de sommeil. Découvrez Best Clock Radio et Beautiful Clock Radio pour iPhone et iPad.',
  'de':'Radio, Podcasts und Apple Music mit frei belegbaren Favoriten, Weckern und Einschlaftimer. Best Clock Radio und Beautiful Clock Radio für iPhone und iPad.'}
 def alternates():
  return '\n'.join(f'<link rel="alternate" hreflang="{lang}" href="{url}">' for lang,url in {**URLS,'x-default':URLS['en']}.items())
 def switcher(lang):
- aria={'en':'Language','fr':'Langue','de':'Sprache'}[lang]
+ aria={'en':'Language','fr':'Langue','de':'Sprache','es':'Idioma'}[lang]
  return '<!-- language-switcher --><nav class="language-switcher" aria-label="'+aria+'">'+''.join(f'<a href="{url}" lang="{code}" hreflang="{code}"'+(' aria-current="page"' if code==lang else '')+'>'+LABELS[code]+'</a>' for code,url in URLS.items())+'</nav><!-- /language-switcher -->'
 class Localize(HTMLParser):
  def __init__(self,lang,mapping):
@@ -89,7 +91,7 @@ class Localize(HTMLParser):
     if part in v:a['src']=f'../assets/{self.lang}/iphone-{n}.png'
    if v=='../assets/app-store.png':a['src']=f'../assets/{self.lang}/app-store.svg'
   if tag=='button' and a.get('id')=='hero-slide-pause':
-   a['data-play-label']={'fr':'Lancer le diaporama','de':'Diashow starten'}[self.lang]
+   a['data-play-label']={'fr':'Lancer le diaporama','de':'Diashow starten','es':'Iniciar presentación'}[self.lang]
    a['data-pause-label']=self.mapping['Pause slideshow']
   # Tailwind's arbitrary background URL must resolve relative to the localized page.
   if 'class' in a:a['class']=a['class'].replace("'./assets/","'../assets/")
@@ -121,21 +123,21 @@ source=(ROOT/'index.html').read_text()
 source=re.sub(r'\s*<!-- language-alternates -->.*?<!-- /language-alternates -->','',source,flags=re.S)
 source=re.sub(r'\s*<!-- language-switcher -->.*?<!-- /language-switcher -->','',source,flags=re.S)
 # Parse translations before adding language navigation so all displayed copy is checked.
-for lang in ['fr','de']:
+for lang in ['fr','de','es']:
  mapping=json.loads((ROOT/f'translations/home-{lang}.json').read_text())
  parser=Localize(lang,mapping);parser.feed(source)
  if parser.missing:raise ValueError(f'Missing {lang} translations: {sorted(parser.missing)}')
  out=''.join(parser.parts)
  out=out.replace('</head>','<!-- language-alternates -->\n'+alternates()+'\n<!-- /language-alternates -->\n</head>')
  out=out.replace('</header>',switcher(lang)+'\n</header>',1)
- out=out.replace('<meta property="og:type" content="website" />',f'<meta property="og:type" content="website" /><meta property="og:locale" content="{lang}_{"FR" if lang=="fr" else "DE"}" />')
+ out=out.replace('<meta property="og:type" content="website" />',f'<meta property="og:type" content="website" /><meta property="og:locale" content="{lang}_{dict(fr="FR",de="DE",es="ES")[lang]}" />')
  directory=ROOT/lang;directory.mkdir(exist_ok=True);(directory/'index.html').write_text(out)
 source=source.replace('</head>','<!-- language-alternates -->\n'+alternates()+'\n<!-- /language-alternates -->\n</head>')
 source=source.replace('</header>',switcher('en')+'\n</header>',1)
 (ROOT/'index.html').write_text(source)
 # The sitemap uses the same canonical URLs as the pages.
 p=ROOT/'sitemap.xml';s=p.read_text()
-for lang in ['fr','de']:
+for lang in ['fr','de','es']:
  if URLS[lang] not in s:s=s.replace('</urlset>',f'  <url><loc>{URLS[lang]}</loc></url>\n</urlset>')
 p.write_text(s)
-print('Built /fr/ and /de/ with complete text/attribute translations and reciprocal language links.')
+print('Built /fr/, /de/ and /es/ with complete text/attribute translations and reciprocal language links.')
