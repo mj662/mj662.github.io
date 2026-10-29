@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index.css?v=20261029-slides2" />
     <title>Best Clock Radio &amp; Beautiful Clock Radio | iPhone &amp; iPad</title>
     <meta
       name="description"
@@ -172,12 +172,22 @@
  <div class="app-download"><img class="download-icon" src="assets/beautiful-app-icon.jpg" width="88" height="88" alt="Beautiful Clock Radio app icon"><strong>Beautiful Clock Radio</strong><a href="https://apps.apple.com/app/id442148386" aria-label="Download Beautiful Clock Radio on the App Store"><img class="download-badge" src="assets/app-store.png" width="170" alt="Download on the App Store"></a></div>
  </div>
         </div>
-        <div class="hero-devices-image">
-          <img src="assets/best-clock-radio-ipad-iphone.png"
-            srcset="assets/best-clock-radio-ipad-iphone-small.png 700w, assets/best-clock-radio-ipad-iphone.png 1400w"
-            sizes="(min-width: 1024px) 55vw, 92vw"
-            width="1400" height="1008" fetchpriority="high"
-            alt="Best Clock Radio on iPad and iPhone, showing the clock, weather, and programmable station buttons">
+        <div class="hero-devices-image" role="region" aria-label="Our apps on iPad and iPhone" aria-roledescription="carousel">
+          <div class="hero-slides">
+            <img class="hero-slide is-active" src="assets/best-clock-radio-ipad-iphone.png"
+              srcset="assets/best-clock-radio-ipad-iphone-small.png 700w, assets/best-clock-radio-ipad-iphone.png 1400w"
+              sizes="(min-width: 1024px) 55vw, 92vw" width="1400" height="1008" fetchpriority="high"
+              alt="Best Clock Radio on iPad and iPhone, showing the clock, weather, and programmable station buttons">
+            <img class="hero-slide" src="assets/beautiful-clock-radio-devices.png"
+              srcset="assets/beautiful-clock-radio-devices-small.png 700w, assets/beautiful-clock-radio-devices.png 1400w"
+              sizes="(min-width: 1024px) 55vw, 92vw" width="1400" height="1008" aria-hidden="true"
+              alt="Beautiful Clock Radio on iPad and iPhone with a photographic harbor background">
+          </div>
+          <div class="hero-slide-controls" hidden>
+            <button type="button" data-app-slide="0" aria-pressed="true">Best Clock Radio</button>
+            <button type="button" data-app-slide="1" aria-pressed="false">Beautiful Clock Radio</button>
+            <button type="button" id="hero-slide-pause">Pause slideshow</button>
+          </div>
         </div>
         <div
           class="max-lg:hidden absolute -z-50 left-0 right-0 -bottom-16 h-[320px] bg-[url('./assets/radio-waves.png')] opacity-10"
@@ -213,7 +223,7 @@
           Wake Up to Your Favorite Content
         </h2>
         <div
-          class="mt-16 grid grid-cols-2 max-lg:grid-cols-1 content-center justify-center gap-8"
+          class="feature-pair mt-16 grid grid-cols-2 max-lg:grid-cols-1 content-center justify-center gap-8"
         >
           <!-- Feature 1 -->
           <div
@@ -436,6 +446,7 @@
     </footer>
     <p class="trademark-note">Apple and Apple Music are trademarks of Apple Inc., registered in the U.S. and other countries. CarPlay, iPhone, and iPad are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
 
+    <script src="hero-slideshow.js" defer></script>
     <script>
       function createEmailLink(id) {
         document.getElementById(id).addEventListener("click", function (e) {
