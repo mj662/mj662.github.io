@@ -4,13 +4,16 @@
   const slides = [...region.querySelectorAll('.hero-slide')];
   const choices = [...region.querySelectorAll('[data-app-slide]')];
   const pause = region.querySelector('#hero-slide-pause');
-  const heading = document.querySelector('#best-clock-radio');
+  const titles = [...document.querySelectorAll('.hero-title-name')];
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let current = 0;
   let playing = !motion.matches;
   function show(index) {
     current = index;
-    if (heading) heading.textContent = choices[index].textContent;
+    titles.forEach((title, i) => {
+      title.classList.toggle('is-active', i === index);
+      title.setAttribute('aria-hidden', String(i !== index));
+    });
     slides.forEach((slide, i) => {
       slide.classList.toggle('is-active', i === index);
       slide.setAttribute('aria-hidden', String(i !== index));
