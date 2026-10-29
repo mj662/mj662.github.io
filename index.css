@@ -31,3 +31,5 @@
 .site-brand{line-height:1.1;flex-shrink:0;max-width:100%}.site-brand span{display:block}header nav{min-width:0}@media(max-width:1200px){header{flex-wrap:wrap}header nav{justify-content:flex-start}}
 
 .hero-devices-section{align-items:center;gap:40px}.hero-devices-section>div:first-child{flex:1 1 43%;min-width:0}.hero-devices-image{flex:1.3 1 57%;min-width:0;width:100%;max-width:760px;margin-inline:auto}.hero-devices-image img{display:block;width:100%;height:auto}@media(max-width:1023px){.hero-devices-section>div:first-child,.hero-devices-image{flex:initial}.hero-devices-image{max-width:760px}}
+
+.phone-feature-card{display:flex;flex-direction:column;overflow:hidden;width:100%}.feature-phone-window{width:min(300px,85%);height:500px;flex:none;margin:0 auto;overflow:hidden}.feature-phone-image{display:block;width:100%;height:auto;margin:0}.phone-feature-card>div:first-child{flex:1 0 auto}
