@@ -49,3 +49,25 @@ For support inquiries, please email enjoyableapps@gmail.com or use the support l
 ## License
 
 © 2024 Best Clock Radio. All Rights Reserved.
+
+## Localized homepages
+
+The English homepage lives at `/`, with French at `/fr/` and German at `/de/`.
+All three include a visible language switcher, self-canonical URLs, reciprocal
+`hreflang` links and sitemap entries. The About page, full privacy policy and
+video currently remain in English; localized links label this explicitly.
+Beautiful Clock Radio screenshots currently use the English artwork.
+
+After changing English homepage content, update matching entries in
+`translations/home-fr.json` and `translations/home-de.json`, then run:
+
+```sh
+python3 tools/build-localized-pages.py
+python3 tools/check-localized-pages.py
+```
+
+The builder rejects missing text and accessibility-attribute translations.
+It uses the supplied localized screenshots in `assets/fr/` and `assets/de/`
+and Apple's official localized App Store badges. The slideshow reads its
+translated play/pause labels from the generated pages. Commit the generated
+`fr/index.html` and `de/index.html` along with their sources.

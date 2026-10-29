@@ -20,7 +20,7 @@
     });
     choices.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
   }
-  function label() { pause.textContent = playing ? 'Pause slideshow' : 'Play slideshow'; }
+  function label() { pause.textContent = playing ? (pause.dataset.pauseLabel || 'Pause slideshow') : (pause.dataset.playLabel || 'Play slideshow'); }
   choices.forEach((button, index) => button.addEventListener('click', () => {
     playing = false;
     show(index);

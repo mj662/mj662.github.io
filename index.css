@@ -39,3 +39,7 @@
 .hero-slides{display:grid;isolation:isolate}.hero-slides .hero-slide{grid-area:1/1;width:100%;height:auto;opacity:0;transition:opacity 1.1s ease;pointer-events:none}.hero-slides .hero-slide.is-active{opacity:1}.hero-slide-controls{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}.hero-slide-controls[hidden]{display:none}.hero-slide-controls button{padding:10px 13px;min-height:44px;border:1px solid #c2ccdc;border-radius:8px;background:white;color:#1d4f91;font:500 13px/1.3 -apple-system,BlinkMacSystemFont,sans-serif}.hero-slide-controls button[aria-pressed=true]{background:#1d4f91;border-color:#1d4f91;color:#fff}@media(prefers-reduced-motion:reduce){.hero-slides .hero-slide{transition:none}}
 
 #best-clock-radio{display:grid;width:100%;min-width:0}.hero-title-name{grid-area:1/1;visibility:hidden;overflow-wrap:normal}.hero-title-name.is-active{visibility:visible}
+
+.language-switcher{flex-basis:100%;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 20px;font:15px/1.4 -apple-system,BlinkMacSystemFont,sans-serif}.language-switcher a{color:#1d4f91;min-height:44px;padding:8px 2px;text-decoration:underline;text-underline-offset:4px}.language-switcher a[aria-current=page]{color:#171721;font-weight:700;text-decoration:none}html[lang=fr] .listening-section h2,html[lang=de] .listening-section h2{overflow-wrap:break-word}@media(max-width:650px){.language-switcher{justify-content:flex-start}}
+/* Keep language navigation on its own row at every viewport width. */
+header{flex-wrap:wrap}
