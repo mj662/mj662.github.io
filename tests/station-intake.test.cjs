@@ -30,7 +30,7 @@ function setup() {
     SpreadsheetApp: {openById: () => ({getSheetByName: () => sheet}), flush() {}},
     CacheService: {getScriptCache: () => ({get: key => cache.get(key), put: (key, value) => cache.set(key, value)})},
     LockService: {getScriptLock: () => ({tryLock: () => true, releaseLock() {}})},
-    MailApp: {getRemainingDailyQuota: () => 100, sendEmail: message => { assert.equal(message.to, 'enjoyableapps@gmail.com'); notices++; }},
+    MailApp: {getRemainingDailyQuota: () => 100, sendEmail: message => { assert.equal(message.to, 'contact@beautifulclockradio.com'); notices++; }},
     HtmlService: {XFrameOptionsMode: {ALLOWALL: 'ALLOWALL'}, createHtmlOutput: html => ({html, setXFrameOptionsMode() { return this; }})}
   });
   vm.runInContext(source, context);

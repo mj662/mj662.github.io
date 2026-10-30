@@ -24,7 +24,7 @@ The page posts through a hidden transport frame. An iframe load is never interpr
 
 The backend verifies the row write before returning a receipt containing only status, reference, request ID and a per-attempt nonce. The page requires the matching nonce/ID and a Google Apps Script content origin. It retains answers after an error or timeout and reuses an unchanged retry's ID. A successful receipt means intake was saved, not that the station was approved.
 
-New submissions include a timestamp, submission ID, original station details, suggested display text, exact permission wording/version/language, conditions, source and pending-verification status. Owner email notifications are best effort; the Sheet is the authoritative intake log. Google service quotas apply. Review the notification-status column if delivery is unavailable. No automatic station reply is sent.
+New submissions include a timestamp, submission ID, original station details, suggested display text, exact permission wording/version/language, conditions, source and pending-verification status. New-submission notifications go to `contact@beautifulclockradio.com`. Email notifications are best effort; the Sheet is the authoritative intake log. Google service quotas apply. Review the notification-status column if delivery is unavailable. No automatic station reply is sent.
 
 ## Records and verification
 

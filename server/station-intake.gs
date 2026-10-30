@@ -1,7 +1,7 @@
 /* Bound to the private intake spreadsheet. No spreadsheet ID is stored in website source. */
 const INTAKE_VERSION = '2026-10-27';
 const INTAKE_TAB = 'Website submissions';
-const OWNER_EMAIL = 'enjoyableapps@gmail.com';
+const OWNER_EMAIL = 'contact@beautifulclockradio.com';
 const ALLOWED_ORIGINS = ['https://www.beautifulclockradio.com', 'https://beautifulclockradio.com', 'http://127.0.0.1:8765'];
 const HEADERS = ['Received', 'Submission ID', 'Station name', 'Display name', 'Short description', 'Website', 'Representative', 'Contact email', 'Stream URL', 'Artwork URL', 'Restrictions or comments', 'Permission version', 'Language', 'Permission wording', 'Agreed', 'Source', 'Review status', 'Payload digest', 'Original submission JSON', 'Owner notification'];
 /* Exact, versioned permission translations are inserted here during preparation. */
