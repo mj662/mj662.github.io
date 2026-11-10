@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const html = fs.readFileSync(path.join(__dirname, '../stations.html'), 'utf8');
 
 function setup(search = '', browserLanguage = 'en') {
   const handlers = {};
@@ -29,19 +30,20 @@ function setup(search = '', browserLanguage = 'en') {
   get('website').value = 'https://example.com';
   get('email').value = 'test@example.com';
   get('representative').value = 'Technical test';
-  get('display_name').dataset.limit = '30';
-  get('description').dataset.limit = '60';
+  for (const match of html.matchAll(/<(?:input|textarea)\b[^>]*\bid="([^"]+)"[^>]*\bdata-limit="(\d+)"/g)) {
+    get(match[1]).dataset.limit = match[2];
+  }
   const form = get('station-form');
   form.elements = {namedItem: get};
   form.querySelectorAll = () => inputs.filter(input => input.dataset.limit);
-  form.reportValidity = () => true;
+  form.reportValidity = () => inputs.every(input => !input.validationMessage);
   form.reset = () => { inputs.forEach(input => { input.value = ''; input.checked = false; }); };
   get('success').hidden = true;
   let timer;
   let submits = 0;
   const localStorage = new Map();
   const window = {addEventListener: (name, callback) => handlers[name] = callback};
-  const document = {getElementById: get, documentElement: {}, querySelectorAll: () => [], querySelector: selector => selector.includes('display_name') ? get('display-counter') : get('description-counter'), createElement: () => new Node('option')};
+  const document = {getElementById: get, documentElement: {}, querySelectorAll: () => [], querySelector: selector => selector.includes('display_name') ? get('display-counter') : selector.includes('description') ? get('description-counter') : null, createElement: () => new Node('option')};
   const context = vm.createContext({window, document, location: {search, href: 'https://www.beautifulclockradio.com/stations.html' + search, origin: 'https://www.beautifulclockradio.com'}, navigator: {languages: [browserLanguage]}, history: {replaceState() {}}, localStorage: {getItem: key => localStorage.get(key), setItem: (key, value) => localStorage.set(key, value)}, URL, URLSearchParams, crypto, setTimeout: callback => { timer = callback; return 1; }, clearTimeout() {}, HTMLFormElement: {prototype: {submit() { submits++; }}}, FormData: class { constructor() { return inputs.filter(input => input.type !== 'checkbox' || input.checked).map(input => [input.name, input.value]); }} });
   window.STATION_FORM_CONFIG = {endpoint: 'https://script.google.com/macros/s/test-deployment/exec', permissionVersion: '2026-10-27'};
   vm.runInContext(fs.readFileSync(path.join(__dirname, '../station-languages.js'), 'utf8'), context);
@@ -102,14 +104,26 @@ test('language changes preserve fields and require reviewing translated permissi
   assert.equal(s.get('language').value, 'es');
 });
 
-test('display and description counters enforce multilingual character limits', () => {
-  const s = setup();
-  s.get('display_name').value = 'a'.repeat(31);
-  s.form.events.input({target: s.get('display_name')});
-  assert.match(s.get('display_name').validationMessage, /30/);
-  assert.equal(s.get('display-counter').textContent, '31/30 characters');
-  s.get('description').value = '🎵'.repeat(60);
-  s.form.events.input({target: s.get('description')});
-  assert.equal(s.get('description').validationMessage, '');
-  assert.equal(s.get('description-counter').textContent, '60/60 characters');
+test('browser accepts boundaries and blocks overlong display text in every language', () => {
+  for (const language of ['en', 'es', 'fr', 'de']) {
+    for (const [field, maximum, counter] of [['display_name', 20, 'display-counter'], ['description', 30, 'description-counter']]) {
+      for (const character of ['a', 'é', '🎵', ' ']) {
+        const s = setup('?lang=' + language);
+        s.get(field).value = character.repeat(maximum);
+        s.form.events.input({target: s.get(field)});
+        assert.equal(s.get(field).validationMessage, '');
+        assert.match(s.get(counter).textContent, new RegExp(maximum + '/' + maximum));
+        s.submit();
+        assert.equal(s.submits(), 1);
+        const over = setup('?lang=' + language);
+        over.get(field).value = character.repeat(maximum + 1);
+        over.form.events.input({target: over.get(field)});
+        assert.ok(over.get(field).validationMessage);
+        assert.match(over.get(counter).textContent, new RegExp((maximum + 1) + '/' + maximum));
+        over.submit();
+        assert.equal(over.submits(), 0, 'Overlong input must never reach the transport');
+        assert.equal(over.get(field).value, character.repeat(maximum + 1), 'Keep text for correction');
+      }
+    }
+  }
 });

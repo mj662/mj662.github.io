@@ -7,7 +7,7 @@
 <link rel="canonical" href="https://www.beautifulclockradio.com/stations.html">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
 <link rel="stylesheet" href="station-form.css?v=20261027-custom1">
-<script src="station-languages.js?v=20261027-custom1" defer></script>
+<script src="station-languages.js?v=20261109-text-limits" defer></script>
 <script src="station-form-config.js?v=20261027-custom1" defer></script>
 <script src="station-form.js?v=20261027-custom1" defer></script>
 </head>
@@ -22,8 +22,8 @@
 <div class="field"><label for="email" data-i18n="email">Station contact email</label><input id="email" name="email" type="email" autocomplete="email" data-limit="254" required></div>
 </div>
 <details id="optional-details"><summary data-i18n="optional">Optional station details</summary><div class="field-grid optional-grid">
-<div class="field"><label for="display_name" data-i18n="displayName">Display name</label><input id="display_name" name="display_name" data-limit="30" aria-describedby="display-hint display-counter"><div class="field-note"><span id="display-hint" data-i18n="displayHint">For the station listing and preset buttons.</span><span id="display-counter" class="counter" data-counter="display_name"></span></div></div>
-<div class="field"><label for="description" data-i18n="description">Short description</label><input id="description" name="description" data-limit="60" aria-describedby="description-hint description-counter"><div class="field-note"><span id="description-hint" data-i18n="descriptionHint">A brief description of your station.</span><span id="description-counter" class="counter" data-counter="description"></span></div></div>
+<div class="field"><label for="display_name" data-i18n="displayName">Display name</label><input id="display_name" name="display_name" data-limit="20" aria-describedby="display-hint display-counter"><div class="field-note"><span id="display-hint" data-i18n="displayHint">A short title. Up to 20 characters, including spaces.</span><span id="display-counter" class="counter" data-counter="display_name"></span></div></div>
+<div class="field"><label for="description" data-i18n="description">Short description</label><input id="description" name="description" data-limit="30" aria-describedby="description-hint description-counter"><div class="field-note"><span id="description-hint" data-i18n="descriptionHint">Up to 30 characters, including spaces.</span><span id="description-counter" class="counter" data-counter="description"></span></div></div>
 <div class="field"><label for="stream_url" data-i18n="stream">Stream URL</label><input id="stream_url" name="stream_url" type="url" inputmode="url" data-limit="2048" placeholder="https://"></div>
 <div class="field"><label for="artwork_url" data-i18n="artwork">Artwork URL</label><input id="artwork_url" name="artwork_url" type="url" inputmode="url" data-limit="2048" placeholder="https://"></div>
 <div class="field full-width"><label for="comments" data-i18n="comments">Restrictions or comments</label><textarea id="comments" name="comments" rows="2" data-limit="2000"></textarea></div>

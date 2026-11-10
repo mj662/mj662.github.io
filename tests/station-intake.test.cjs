@@ -51,16 +51,27 @@ test('validated submission preserves exact permission and separate display field
 
 test('rejects missing permission, invalid email, unsupported language and overlong display text', () => {
   const {context, valid} = setup();
-  for (const changes of [{permission: ''}, {email: 'broken'}, {language: '__proto__'}, {display_name: 'a'.repeat(31)}, {description: 'a'.repeat(61)}, {website: 'javascript:alert(1)'}, {fax: 'bot'}]) {
+  for (const changes of [{permission: ''}, {email: 'broken'}, {language: '__proto__'}, {display_name: 'a'.repeat(21)}, {description: 'a'.repeat(31)}, {website: 'javascript:alert(1)'}, {fax: 'bot'}]) {
     assert.throws(() => context.validateSubmission_({...valid(), ...changes}));
   }
 });
 
-test('unicode limits count code points consistently', () => {
+test('server enforces boundaries including spaces and Unicode before writing or notifying', () => {
   const {context, valid} = setup();
-  assert.equal(context.validateSubmission_({...valid(), display_name: 'é'.repeat(30)}).display_name.length, 30);
-  assert.doesNotThrow(() => context.validateSubmission_({...valid(), description: '🎵'.repeat(60)}));
-  assert.throws(() => context.validateSubmission_({...valid(), description: '🎵'.repeat(61)}));
+  for (const language of ['en', 'es', 'fr', 'de']) {
+    for (const [field, maximum] of [['display_name', 20], ['description', 30]]) {
+      for (const character of ['a', 'é', '🎵', ' ']) {
+        assert.doesNotThrow(() => context.validateSubmission_({...valid(), language, [field]: character.repeat(maximum)}));
+        const over = setup();
+        const output = over.context.doPost({parameter: {...over.valid(), language, [field]: character.repeat(maximum + 1)}, contentLength: 1000});
+        assert.match(output.html, /"ok":false/);
+        assert.match(output.html, new RegExp('"field":"' + field + '"'));
+        assert.equal(over.rows.length, 1, 'Rejected input must not add a row');
+        assert.equal(over.notices(), 0, 'Rejected input must not notify');
+      }
+    }
+  }
+  assert.doesNotThrow(() => context.validateSubmission_({...valid(), station_name: 'a'.repeat(120)}));
 });
 
 test('duplicate unchanged retry produces one durable row and one owner notice', () => {
