@@ -66,7 +66,7 @@ function validateSubmission_(p) {
   if (!Object.prototype.hasOwnProperty.call(PERMISSIONS, p.language)) fail_('invalid', 'language');
   const elapsed = Date.now() - Number(p.started_at);
   if (!Number.isFinite(elapsed) || elapsed < 800 || elapsed > 7 * 86400000) fail_('invalid');
-  const limits = {station_name: 120, display_name: 30, description: 60, website: 2048, representative: 120, email: 254, stream_url: 2048, artwork_url: 2048, comments: 2000};
+  const limits = {station_name: 120, display_name: 20, description: 30, website: 2048, representative: 120, email: 254, stream_url: 2048, artwork_url: 2048, comments: 2000};
   const data = {};
   Object.keys(limits).forEach(function(key) {
     const raw = String(p[key] || '');
